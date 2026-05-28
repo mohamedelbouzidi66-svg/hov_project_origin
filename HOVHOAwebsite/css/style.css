@@ -1,0 +1,46 @@
+
+* {
+    font-family: 'Poppins', 'sans-serif';
+
+    .hover-move {
+    transition: transform 0.3s ease;
+}
+
+
+.hover-move:hover {
+    transform: translateY(-5px); /* كتطلع شوية لفوق */
+}
+
+    .section {
+            height: 100vh;
+            background-image:url('assets/background.webp');
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        /* dark overlay */
+        .section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0,0,0,0.5);
+        }
+
+        .section-content {
+            position: relative;
+            z-index: 2;
+        }
+}
