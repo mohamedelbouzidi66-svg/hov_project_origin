@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/style.css">
+<?php include '../includes/header.php' ?>
     <title>Leather Page</title>
     <style>
         .card-body{
@@ -30,11 +18,9 @@
             font-family: "bootstrap-icons";
         }
     </style>
-</head>
-
 <body>
 
-<?php include 'includes/nav.php' ?>
+<?php include '../includes/nav.php' ?>
 
 
     <br><br>
@@ -44,7 +30,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="" target="_blank"><img src="assets/lp01.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
+                    <a href="" target="_blank"><img src="../assets/lp01.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 1960s Symax Hand Painted Classic Horsehide Leather Biker Jacket - L
@@ -66,7 +52,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="" target="_blank"><img src="assets/lp2.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
+                    <a href="" target="_blank"><img src="../assets/lp2.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage The Leather Factory Brown Leather Jacket - L 
@@ -88,7 +74,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="" target="_blank"><img src="assets/lp3.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
+                    <a href="" target="_blank"><img src="../assets/lp3.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 1950s Shearling Lined Horsehide Leather Belted Biker Jacket - L
@@ -110,7 +96,7 @@
             
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="" target="_blank"><img src="assets/lp4.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
+                    <a href="" target="_blank"><img src="../assets/lp4.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 90's Intersect Biker Leather Jacket - S 
@@ -132,7 +118,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="" target="_blank"><img src="assets/lp05.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
+                    <a href="" target="_blank"><img src="../assets/lp05.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Danier Leather Jacket - XL
@@ -154,7 +140,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="" target="_blank"><img src="assets/lp06.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
+                    <a href="" target="_blank"><img src="../assets/lp06.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 1940s Brown Leather Jacket - S 
@@ -176,7 +162,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="" target="_blank"><img src="assets/lp07.webp" class="card-img-top hover-move" alt="leather jackets"></a>
+                    <a href="" target="_blank"><img src="../assets/lp07.webp" class="card-img-top hover-move" alt="leather jackets"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 90s Red Embroidered Leather Jacket - S
@@ -198,7 +184,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="" target="_blank"><img src="assets/lp08.webp" class="card-img-top hover-move" alt="leather jackets"></a>
+                    <a href="" target="_blank"><img src="../assets/lp08.webp" class="card-img-top hover-move" alt="leather jackets"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Canada Sportwear Leather Jacket - L
@@ -220,7 +206,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="" target="_blank"><img src="assets/lp09.webp" class="card-img-top hover-move" alt="leather jackets"></a>
+                    <a href="" target="_blank"><img src="../assets/lp09.webp" class="card-img-top hover-move" alt="leather jackets"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 90's Leather Heavyweight Zip Up Jacket - XL
@@ -242,7 +228,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="" target="_blank"><img src="assets/lp010.webp" class="card-img-top hover-move" alt="leather jackets"></a>
+                    <a href="" target="_blank"><img src="../assets/lp010.webp" class="card-img-top hover-move" alt="leather jackets"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 70s Big Steel Brown Leather Jacket - S 
@@ -264,7 +250,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="" target="_blank"><img src="assets/lp011.webp" class="card-img-top hover-move" alt="leather jackets"></a>
+                    <a href="" target="_blank"><img src="../assets/lp011.webp" class="card-img-top hover-move" alt="leather jackets"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Leather Biker Jacket - XXL
@@ -286,7 +272,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="" target="_blank"><img src="assets/lp012.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
+                    <a href="" target="_blank"><img src="../assets/lp012.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 80s R&R Black Leather Jacket - L
@@ -308,7 +294,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="" target="_blank"><img src="assets/lp013.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
+                    <a href="" target="_blank"><img src="../assets/lp013.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Distressed Leather Milestone Jacket - XL
@@ -330,7 +316,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="" target="_blank"><img src="assets/lp014.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
+                    <a href="" target="_blank"><img src="../assets/lp014.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Saddlery Type A-2 Heavyweight Military Style Leather Jacket - L
@@ -351,7 +337,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="" target="_blank"><img src="assets/lp015.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
+                    <a href="" target="_blank"><img src="../assets/lp015.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Biker Style Leather Jacket - S
@@ -373,7 +359,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="" target="_blank"><img src="assets/lp016.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
+                    <a href="" target="_blank"><img src="../assets/lp016.jpg" class="card-img-top hover-move" alt="leather jackets"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 50s Leather Bomber Jacket - S
@@ -401,7 +387,7 @@
 
         <br>
 
-<?php include 'includes/footer.php' ?>
+<?php include '../includes/footer.php' ?>
 
         <br>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

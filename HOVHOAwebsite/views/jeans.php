@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/style.css">
+<?php include '../includes/header.php' ?>
     <title>jeans Page</title>
     <style>
         .card-body{
@@ -30,11 +18,9 @@
             font-family: "bootstrap-icons";
         }
     </style>
-</head>
-
 <body>
 
-<?php include 'includes/nav.php' ?>
+<?php include '../includes/nav.php' ?>
 
     <br><br>
 
@@ -43,7 +29,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="jp1.php" target="_blank"><img src="assets/jp01.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="jp1.php" target="_blank"><img src="../assets/jp01.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage For All Man Kind Jeans - W34 L26 
@@ -65,7 +51,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="tp2.php" target="_blank"><img src="assets/jp02.webp" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp2.php" target="_blank"><img src="../assets/jp02.webp" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Heavyweight Key Workwear Dark Wash Jeans - W28 L27
@@ -87,7 +73,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="tp3.php" target="_blank"><img src="assets/jp3.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp3.php" target="_blank"><img src="../assets/jp3.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage For All Man Kind Jeans - W30 L28
@@ -109,7 +95,7 @@
             
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="tp4.php" target="_blank"><img src="assets/jp4.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp4.php" target="_blank"><img src="../assets/jp4.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Y2k 2000s Limestone Twisted Hem Jeans - W32 L31
@@ -131,7 +117,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="tp5.php" target="_blank"><img src="assets/jp5.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp5.php" target="_blank"><img src="../assets/jp5.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage For All Man Kind Jeans - W32 L33                         
@@ -153,7 +139,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="tp6.php" target="_blank"><img src="assets/jp6.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp6.php" target="_blank"><img src="../assets/jp6.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage For All Man Kind Jeans - W34 L32 
@@ -175,7 +161,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="tp7.php" target="_blank"><img src="assets/jp7.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp7.php" target="_blank"><img src="../assets/jp7.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Wrangler Relaxed Fit Light Wash Jeans - W32 L28
@@ -197,7 +183,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="tp8.php" target="_blank"><img src="assets/jp8.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp8.php" target="_blank"><img src="../assets/jp8.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage For All Man Kind Jeans - W27 L32 
@@ -219,7 +205,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="tp9.php" target="_blank"><img src="assets/jp9.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp9.php" target="_blank"><img src="../assets/jp9.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Wrangler Relaxed Fit Medium Wash Jeans - W34 L29
@@ -241,7 +227,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="tp10.php" target="_blank"><img src="assets/jp10.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp10.php" target="_blank"><img src="../assets/jp10.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Y2K Guess Relaxed Fit Medium Wash Jeans - W30 L29
@@ -263,7 +249,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="tp11.php" target="_blank"><img src="assets/jp11.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp11.php" target="_blank"><img src="../assets/jp11.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Levi's Relaxed Fit Grey Stone Wash Jeans - W30 L29
@@ -285,7 +271,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="tp12.php" target="_blank"><img src="assets/jp12.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp12.php" target="_blank"><img src="../assets/jp12.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage For All Man Kind Jeans - W32 L33
@@ -307,7 +293,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="tp13.php" target="_blank"><img src="assets/jp13.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp13.php" target="_blank"><img src="../assets/jp13.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 2000s For All Man Kind Dark Wash Jeans - W35 L31
@@ -329,7 +315,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="tp14.php" target="_blank"><img src="assets/jp14.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp14.php" target="_blank"><img src="../assets/jp14.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Y2K Exco Baggy Medium Wash Jeans - W30 L30
@@ -352,7 +338,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="tp15.php" target="_blank"><img src="assets/jp15.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp15.php" target="_blank"><img src="../assets/jp15.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 90's Wrangler Faded Medium Wash Straight Leg Jeans - W30 L29 
@@ -372,7 +358,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card">
-                    <a href="tp16.php" target="_blank"><img src="assets/jp16.webp" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp16.php" target="_blank"><img src="../assets/jp16.webp" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Y2K 00s Guess Mid-Rise Wide Leg Denim Jeans - W34 L30
@@ -401,7 +387,7 @@
 
         <br>
 
-<?php include 'includes/footer.php' ?>
+<?php include '../includes/footer.php' ?>
 
         <br>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

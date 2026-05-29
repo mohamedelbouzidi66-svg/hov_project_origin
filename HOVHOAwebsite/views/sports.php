@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include '../includes/header.php' ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/style.css">
     <title>Men Page</title>
     <style>
         .position-absolute:hover{
@@ -19,11 +8,10 @@
             border: none;
         }
     </style>
-</head>
 
 <body>
 
-    <?php include 'includes/nav.php' ?>
+    <?php include '../includes/nav.php' ?>
 
     <br><br>
 
@@ -32,7 +20,7 @@
         <div class="row justify-content-center">
             <div class="col-lg-4 col-md-6 my-3">
                 <div class="card position-relative border-0" style="width: 18rem;">
-                    <a href="kit.php"><img src="assets/kit.jpg" class="card-img-top hover-move" alt=""></a>
+                    <a href="kit.php"><img src="../assets/kit.jpg" class="card-img-top hover-move" alt=""></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <a href="kit.php" class="position-absolute bottom-0 start-50 translate-middle-x mb-5 btn btn-light px-3 py-1 rounded-pill shadow-none">
                             Retro Kits</a>
@@ -42,7 +30,7 @@
     
                 <div class="col-lg-4 col-md-6 my-3">
                     <div class="card position-relative border-0" style="width: 21rem;">
-                    <a href="jacket.php"><img src="assets/jacket.webp" class="card-img-top hover-move" alt=""></a>
+                    <a href="jacket.php"><img src="../assets/jacket.webp" class="card-img-top hover-move" alt=""></a>
                         <div class="card-body justify-content-evenly mb-2">
                             <a href="jacket.php" class="position-absolute bottom-0 start-50 translate-middle-x mb-5 btn btn-light px-3 py-1 rounded-pill shadow-none">
                                 Retro Jackets</a>
@@ -59,7 +47,7 @@
 
         <br>
 
-<?php include 'includes/footer.php' ?>
+<?php include '../includes/footer.php' ?>
 
         <br>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

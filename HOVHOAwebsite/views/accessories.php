@@ -1,16 +1,4 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/style.css">
+<?php include '../includes/header.php' ?>
     <title>Accessory Page</title>
     <style>
         .card-body{
@@ -31,10 +19,9 @@
             font-family: "bootstrap-icons";
         }
     </style>
-</head>
 
 <body>
-<?php include 'includes/nav.php' ?>
+<?php include '../includes/nav.php' ?>
 
     <br><br>
 
@@ -43,7 +30,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="jp1.php" target="_blank"><img src="assets/ap1.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
+                    <a href="jp1.php" target="_blank"><img src="../assets/ap1.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Omega Seamaster Automatic Pink Gold-Plated 1969
@@ -63,7 +50,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp2.php" target="_blank"><img src="assets/ap2.webp" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
+                    <a href="tp2.php" target="_blank"><img src="../assets/ap2.webp" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                         Rolex Precision Cal.1600 18ct 1972
@@ -85,7 +72,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp3.php" target="_blank"><img src="assets/ap3.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
+                    <a href="tp3.php" target="_blank"><img src="../assets/ap3.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Rolex Oyster Perpetual Date Ref.1503 14ct 1979
@@ -107,7 +94,7 @@
             
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp4.php" target="_blank"><img src="assets/ap4.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
+                    <a href="tp4.php" target="_blank"><img src="../assets/ap4.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Rolex Oyster Perpetual Datejust Ref.6305 18ct 1955
@@ -127,7 +114,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp5.php" target="_blank"><img src="assets/ap5.jpg" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
+                    <a href="tp5.php" target="_blank"><img src="../assets/ap5.jpg" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Patek Philippe Ellipse TV Ref.3852 18ct c1976
@@ -149,7 +136,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp6.php" target="_blank"><img src="assets/ap6.webp" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
+                    <a href="tp6.php" target="_blank"><img src="../assets/ap6.webp" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             IWC Ingenieur 18ct 1960
@@ -171,7 +158,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp7.php" target="_blank"><img src="assets/ap7.webp" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
+                    <a href="tp7.php" target="_blank"><img src="../assets/ap7.webp" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Universal Geneve Uni-Compax Chronograph Cal.283 18ct 1943
@@ -191,7 +178,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp8.php" target="_blank"><img src="assets/ap8.jpg" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
+                    <a href="tp8.php" target="_blank"><img src="../assets/ap8.jpg" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Universal Geneve Cal.230 18ct c1942
@@ -213,7 +200,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp9.php" target="_blank"><img src="assets/ap9.webp" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
+                    <a href="tp9.php" target="_blank"><img src="../assets/ap9.webp" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             BLACK CHUNKY BUCKLE LEATHER BELT
@@ -235,7 +222,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp10.php" target="_blank"><img src="assets/ap10.webp" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
+                    <a href="tp10.php" target="_blank"><img src="../assets/ap10.webp" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             BLACK REVERSIBLE PREMIUM LEATHER BELT
@@ -257,7 +244,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp11.php" target="_blank"><img src="assets/ap11.webp" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
+                    <a href="tp11.php" target="_blank"><img src="../assets/ap11.webp" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             WHITE ABSTRACT PRINT LEATHER BELT
@@ -279,7 +266,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp12.php" target="_blank"><img src="assets/ap12.webp" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
+                    <a href="tp12.php" target="_blank"><img src="../assets/ap12.webp" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             BEIGE BRAIDED BELT
@@ -301,7 +288,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp13.php" target="_blank"><img src="assets/ap13.jpg" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
+                    <a href="tp13.php" target="_blank"><img src="../assets/ap13.jpg" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Museum Artefacts Silk Tie
@@ -323,7 +310,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp14.php" target="_blank"><img src="assets/ap14.jpg" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
+                    <a href="tp14.php" target="_blank"><img src="../assets/ap14.jpg" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 90s Chritsian Dior Silk Tie
@@ -346,7 +333,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp15.php" target="_blank"><img src="assets/ap15.jpg" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
+                    <a href="tp15.php" target="_blank"><img src="../assets/ap15.jpg" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 80s Christian Dior Tie 
@@ -368,7 +355,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp16.php" target="_blank"><img src="assets/ap16.jpg" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
+                    <a href="tp16.php" target="_blank"><img src="../assets/ap16.jpg" class="card-img-top hover-move" style="height:auto" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 1990s Giorgio Armani Patterned Silk Tie
@@ -396,7 +383,7 @@
 
         <br>
 
-<?php include 'includes/footer.php' ?>
+<?php include '../includes/footer.php' ?>
 
         <br>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"

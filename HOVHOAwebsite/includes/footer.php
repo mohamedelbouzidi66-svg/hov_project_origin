@@ -47,19 +47,19 @@
                 <!-- Links -->
                 <div class="col-md-4 mb-4">
                     <h5 class="fw-bold mb-3">Quick Links</h5>
-                    <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">HouseOfVintage</a><br>
-                    <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">MEN</a><br>
-                    <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">WOMEN</a><br>
-                    <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">SHOES</a><br>
-                    <a href="#" class="d-inline-block mb-2 text-dark text-decoration-none">SPORTS</a><br>
+                    <a href="admin.php" class="d-inline-block mb-2 text-dark text-decoration-none">HouseOfVintage</a><br>
+                    <a href="men.php" class="d-inline-block mb-2 text-dark text-decoration-none">MEN</a><br>
+                    <a href="women.php" class="d-inline-block mb-2 text-dark text-decoration-none">WOMEN</a><br>
+                    <a href="accessories.php" class="d-inline-block mb-2 text-dark text-decoration-none">ACCESSORIES</a><br>
+                    <a href="sports.php" class="d-inline-block mb-2 text-dark text-decoration-none">SPORTS</a><br>
                 </div>
 
                 <!-- Contact -->
                 <div class="col-md-4 mb-4">
                     <h5 class="fw-bold mb-3">Reach Us</h5>
 
-                    <p>Email : HouseOfVintage@gmail.com</p>
-                    <p>Phone : +212 621820624</p>
+                    <p>Email : <a href="gmail.php" class="d-inline-block mb-0 fw-bold text-dark text-decoration-none">HouseOfVintage@gmail.com</a></p>
+                    <span>Phone :<p class="d-inline-block fw-bold">+212 621820624</p></span>
                     <p>Casablanca, Morocco</p>
                 </div>
 

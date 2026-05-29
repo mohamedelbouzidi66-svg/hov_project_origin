@@ -1,22 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/style.css">
+<?php include '../includes/header.php' ?>
     <title>HouseOfVintage</title>
     <style>
 
         .section {
             height: 100vh;
-            background-image:url('assets/background.webp');
+            background-image:url('../assets/background.webp');
             background-size: cover;
             background-position: center;
 
@@ -47,11 +35,9 @@
             z-index: 2;
         }
     </style>
-</head>
-
 <body>
 
-<?php include 'includes/nav.php' ?>
+<?php include '../includes/nav.php' ?>
 
     <br><br>
 
@@ -67,7 +53,7 @@
         <div class="row">
             <div class="col-lg-4 col-md-6 my-3">
                 <div class="card" style="width: 17rem;">
-                    <a href="men.php" target="_blank"><img src="assets/men1.jpg" class="card-img-top hover-move" alt="MEN"></a>
+                    <a href="men.php" target="_blank"><img src="../assets/men1.jpg" class="card-img-top hover-move" alt="MEN"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <h5 class="card-title fw-bolder">Men’s Vintage</h5>
                             <p class="mb-0">
@@ -80,7 +66,7 @@
 
             <div class="col-lg-4 col-md-6 my-3">
                 <div class="card" style="width: 18rem;">
-                    <a href="women.php"><img src="assets/woman1.jpg" class="card-img-top hover-move" alt="WOMEN"></a>
+                    <a href="women.php"><img src="../assets/woman1.jpg" class="card-img-top hover-move" alt="WOMEN"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <h5 class="card-title fw-bolder">Women’s Vintage</h5>
                         <p class="mb-0">
@@ -93,7 +79,7 @@
 
             <div class="col-lg-4 col-md-6 my-3">
                 <div class="card" style="width: 23.5rem;">
-                    <a href="sports.php"><img src="assets/sports.webp" class="card-img-top hover-move" alt="SPORTS"></a>
+                    <a href="sports.php"><img src="../assets/sports.webp" class="card-img-top hover-move" alt="SPORTS"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <h5 class="card-title fw-bolder">Sports Vintage</h5>
                         <p class="mb-0">
@@ -113,7 +99,7 @@
 
         <br>
 
-<?php include 'includes/footer.php' ?>
+<?php include '../includes/footer.php' ?>
 
         <br>
 

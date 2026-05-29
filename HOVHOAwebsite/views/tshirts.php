@@ -1,16 +1,5 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include '../includes/header.php' ?>
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
-        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-    <link
-        href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
-        rel="stylesheet">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
-    <link rel="stylesheet" href="css/style.css">
     <title>T-shirts Page</title>
     <style>
         .card-body{
@@ -31,11 +20,10 @@
             font-family: "bootstrap-icons";
         }
     </style>
-</head>
 
 <body>
     
-<?php include 'includes/nav.php' ?>
+<?php include '../includes/nav.php' ?>
     
     <br><br>
 
@@ -44,7 +32,7 @@
         <div class="row">
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="jp1.php" target="_blank"><img src="assets/sp1.webp" class="card-img-top hover-move" alt="tshirt"></a>
+                    <a href="jp1.php" target="_blank"><img src="../assets/sp1.webp" class="card-img-top hover-move" alt="tshirt"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Three Inches Of Blood T-shirt - L
@@ -67,7 +55,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp2.php" target="_blank"><img src="assets/sp02.jpg" class="card-img-top hover-move" alt="tshirt"></a>
+                    <a href="tp2.php" target="_blank"><img src="../assets/sp02.jpg" class="card-img-top hover-move" alt="tshirt"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Texas All Over Print T-shirt - XL
@@ -90,7 +78,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp3.php" target="_blank"><img src="assets/sp3.webp" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp3.php" target="_blank"><img src="../assets/sp3.webp" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 1990s The Roxx Tupac Shakur Memorial Single Stitch T-Shirt - L
@@ -113,7 +101,7 @@
             
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp4.php" target="_blank"><img src="assets/sp4.webp" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp4.php" target="_blank"><img src="../assets/sp4.webp" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Just Do It Later T-shirt - XL
@@ -136,7 +124,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp5.php" target="_blank"><img src="assets/sp5.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
+                    <a href="tp5.php" target="_blank"><img src="../assets/sp5.jpg" class="card-img-top hover-move" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Y2K Italian Souvenir Graphic T-Shirt - S 
@@ -159,7 +147,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp6.php" target="_blank"><img src="assets/sp6.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
+                    <a href="tp6.php" target="_blank"><img src="../assets/sp6.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 00s Street Rod Association Fun Run T-shirt - M
@@ -182,7 +170,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp7.php" target="_blank"><img src="assets/sp7.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
+                    <a href="tp7.php" target="_blank"><img src="../assets/sp7.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 80's Single Stitch Cowboy T-Shirt - XL
@@ -205,7 +193,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp8.php" target="_blank"><img src="assets/sp8.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
+                    <a href="tp8.php" target="_blank"><img src="../assets/sp8.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Harley Davidson Denver Colorado Motorcycle Club Skeleton Crewneck T-Shirt - XL
@@ -227,7 +215,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp9.php" target="_blank"><img src="assets/sp9.webp" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
+                    <a href="tp9.php" target="_blank"><img src="../assets/sp9.webp" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Y2K 00s DC Shoe Co. Beer Logo Heavyweight Crewneck T-Shirt - M
@@ -249,7 +237,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp10.php" target="_blank"><img src="assets/sp10.webp" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
+                    <a href="tp10.php" target="_blank"><img src="../assets/sp10.webp" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Jay-Z Rockafella Records Heavyweight Gildan Crewneck T-Shirt - 4XL
@@ -271,7 +259,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp11.php" target="_blank"><img src="assets/sp11.webp" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
+                    <a href="tp11.php" target="_blank"><img src="../assets/sp11.webp" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 2000-2001 AC/DC Hell's Bells World Tour T-Shirt - M
@@ -294,7 +282,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp12.php" target="_blank"><img src="assets/sp12.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
+                    <a href="tp12.php" target="_blank"><img src="../assets/sp12.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 1990 NHL Vancouver Canucks Single Stitch T-shirt - L
@@ -317,7 +305,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp13.php" target="_blank"><img src="assets/sp13.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
+                    <a href="tp13.php" target="_blank"><img src="../assets/sp13.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 2000s For All Man Kind Dark Wash Jeans - W35 L31
@@ -340,7 +328,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp14.php" target="_blank"><img src="assets/sp14.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
+                    <a href="tp14.php" target="_blank"><img src="../assets/sp14.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Y2K Exco Baggy Medium Wash Jeans - W30 L30
@@ -364,7 +352,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp15.php" target="_blank"><img src="assets/sp15.jpg" class="card-img-top hover-move" style="height:fit-content;" alt="tracksuit"></a>
+                    <a href="tp15.php" target="_blank"><img src="../assets/sp15.jpg" class="card-img-top hover-move" style="height:fit-content;" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage 90's Wrangler Faded Medium Wash Straight Leg Jeans - W30 L29 
@@ -386,7 +374,7 @@
 
             <div class="col-lg-3 col-md-4 my-3">
                 <div class="card" style="width: 15rem;">
-                    <a href="tp16.php" target="_blank"><img src="assets/sp16.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
+                    <a href="tp16.php" target="_blank"><img src="../assets/sp16.jpg" class="card-img-top hover-move" style="height:fit-content" alt="tracksuit"></a>
                     <div class="card-body justify-content-evenly mb-2">
                         <p class="mb-0">
                             Vintage Y2K 00s Guess Mid-Rise Wide Leg Denim Jeans - W34 L30
@@ -414,7 +402,7 @@
     </div>
 <br>
 
-<?php include 'includes/footer.php'; ?>
+<?php include '../includes/footer.php'; ?>
         <br>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
             integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous">

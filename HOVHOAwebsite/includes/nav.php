@@ -6,7 +6,7 @@
     }
     ?>
     <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-        <div class="container-fluid"><a class="navbar-brand me-5 fw-bold fs-3" href="index.php"><img src="assets/hov_logo6.PNG" style="height: 6rem;"></a><button
+        <div class="container-fluid"><a class="navbar-brand me-5 fw-bold fs-3" href="index.php"><img src="../assets/hov_logo6.PNG" style="height: 6rem;"></a><button
                 class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
                 aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
                     class="navbar-toggler-icon"></span></button>
