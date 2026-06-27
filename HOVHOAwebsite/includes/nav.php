@@ -1,44 +1,105 @@
-    <?php 
-    session_start(); 
+<?php 
+    include '../includes/header.php';
+    include '../includes/database.php';
+    session_start();
+
     $connect = false;
     if(isset($_SESSION['users'])){
+        $role = $_SESSION['users']['role'];
         $connect = true;
     }
-    ?>
-    <nav class="navbar navbar-expand-lg navbar-light bg-white fixed-top">
-        <div class="container-fluid"><a class="navbar-brand me-5 fw-bold fs-3" href="index.php"><img src="../assets/hov_logo6.PNG" style="height: 6rem;"></a><button
-                class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span
-                    class="navbar-toggler-icon"></span></button>
-            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    $labels = $pdo->query(" SELECT DISTINCT label
+                                FROM category
+    ")->fetchAll(PDO::FETCH_ASSOC);
+
+    $idUser = isset($_SESSION['users']['idUser'])
+        ? $_SESSION['users']['idUser']
+        :null;
+    $sql = $pdo->query("SELECT COUNT(idBag) AS total_bag 
+                                FROM cart WHERE idUser = '$idUser'");
+    $result = $sql->fetch(PDO::FETCH_ASSOC);
+
+?>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+        <div class="container-fluid">
+            <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                    <li class="nav-item"><a class="nav-link fw-light text-dark fs-5" href="men.php" target="_blank">MEN</a></li>
-                    <li class="nav-item"><a class="nav-link fw-light text-dark fs-5" href="women.php" target="_blank">WOMEN</a></li>
-                    <li class="nav-item"><a class="nav-link fw-light text-dark fs-5" href="accessories.php" target="_blank">ACCESSORIES</a></li>
-                    <li class="nav-item"><a class="nav-link fw-light text-dark fs-5" href="sports.php" target="_blank">SPORTS</a></li>
+                    <?php foreach($labels as $label){ ?>
+                    <a href="style.php?label=<?= $label['label'] ?>" class="btn icon shadow-none">
+                        <?= $label['label'] ?>
+                    </a>
+                    <?php } ?>
+                    <a href="sale.php" class="btn icon shadow-none text-danger">
+                        SALE
+                    </a>
+                </div>
                 </ul>
-                <form class="search-box d-flex align-items-center">
-                    <input type="text" 
-                    class="form-control shadow-none me-3"
-                    placeholder="Search vintage clothes...">
+
+                <div>
+                    <?php 
+                        if($connect){
+                    ?>
+                        <a href="user.php">
+                            <img src="../assets/hov_logo6.PNG" alt="" style="height: 4rem;" class="me-2">
+                        </a>
+                    <?php
+                        }else{
+                    ?>
+                        <a href="index.php">
+                            <img src="../assets/hov_logo6.PNG" alt="" style="height: 4rem;" class="me-2">
+                        </a>
+                    <?php
+                        }
+                    ?>
+                </div>
+            
+                <form method="get" class="d-flex">
+                    <input class="form-control shadow-none" type="search" placeholder="Search" aria-label="Search" name="search-input">
+                    <button class="btn btn-outline-0" type="submit" name="search-btn"></button>
                 </form>
-                <a href="bag.php" target="_blank"><i class="bi bi-bag fs-5 me-3 text-dark"></i></a>
-                <a href="fav.php"><i class="bi bi-heart fs-5 me-3 text-dark"></i></a>
+
+                <a href="cart.php" class="btn icon shadow-none"><i class="bi bi-bag fs-5">
+                    <?php 
+                        if($result['total_bag'] == 0){
+                            ?>
+                            <sup></sup>
+                            <?php
+                        }else{
+                            ?>
+                            <sup class="fw-bold bg-danger rounded-pill px-2 text-light"><?= $result['total_bag'] ?></sup>
+                            <?php
+                        }
+                    ?>
+                    </i>Bag
+                </a>
+
+                <a href="wishlist.php" class="btn icon shadow-none">
+                    <i class="bi bi-heart fs-5 me-2"></i>Wishlist
+                </a>
+                
                 <?php
-                    if($connect){
+                    if($connect && $role == 'user'){
                         ?>
-                        <a href="dashboard.php" target='_blank' class="bz text-decoration-none"><i class="bi bi-person fs-4 me-0 text-dark"></i>
-                        <a href="dashboard.php" class="bz text-dark fs-8 me-2 py-3 fw-bold text-uppercase text-decoration-none"><?= $_SESSION['users']['fullname']?></a>
+                        <a href="userDashboard.php" class="btn fs-8 me-0 fw-bold shadow-none">
+                            <i class="bi bi-person fs-4 me-2"></i><?= $_SESSION['users']['fullname']?>
+                        </a>
                 <?php
+                    }elseif($connect && $role == 'admin'){
+                ?>
+                        <a href="adminDashboard.php" class="btn fs-8 me-0 fw-bold shadow-none">
+                            <i class="bi bi-person fs-4 me-2"></i><?= $_SESSION['users']['fullname']?>
+                        </a>
+                <?php    
                     }else{
                 ?>
-                <a href="login.php" target='_blank' class="bz text-decoration-none"><i class="bi bi-person fs-3 me-0 text-dark"></i>
-                <span class="bz text-dark fs-8 me-2 py-3 fw-bold text-uppercase"></span>
+                        <a href="userLogin.php" class="btn shadow-none">
+                            <i class="bi bi-person fs-4 me-2"></i>Account
+                        </a>
                 <?php
-                    }
+                }
                 ?>
-                </a>
             </div>
         </div>
     </nav>
-<br>
