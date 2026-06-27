@@ -39,8 +39,8 @@
             <div class="col-lg-4 my-1">
                 <div class="card">
                     <a href="sale.php">
-                        <img src="" 
-                            class="card-img-top hover-move" alt="MEN">
+                        <img src="../assets/weeklysale.webp" 
+                            class="card-img-top hover-move" alt="weeklysale">
                     </a>
                     <div class="card-body justify-content-evenly mb-2">
                         <h5 class="card-title fw-bolder">Weekly Sale</h5>

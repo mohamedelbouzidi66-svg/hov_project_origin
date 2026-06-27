@@ -13,7 +13,7 @@
 
     .section {
             height: 100vh;
-            /* background-image:url('../assets/background.webp'); */
+            background-image:url('../assets/lastbackground.png');
             background-size: cover;
             background-position: center;
 
@@ -56,7 +56,6 @@
 
 .icon{
     color: black;
-    text-decoration: underline;
     font-weight: 200;
     padding-left: 1rem;
     padding-right: 1rem;

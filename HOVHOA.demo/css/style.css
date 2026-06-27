@@ -1,0 +1,71 @@
+
+* {
+    font-family: 'Poppins', 'sans-serif';
+
+    .hover-move {
+    transition: transform 0.3s ease;
+}
+
+
+.hover-move:hover {
+    transform: translateY(-5px); 
+}
+
+    .section {
+            height: 100vh;
+            /* background-image:url('../assets/background.webp'); */
+            background-size: cover;
+            background-position: center;
+
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            text-align: center;
+            color: white;
+            position: relative;
+        }
+
+        .section::before {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+
+            width: 100%;
+            height: 100%;
+
+            background: rgba(0,0,0,0.5);
+        }
+
+        .section-content {
+            position: relative;
+            z-index: 2;
+        }
+}
+
+.img{
+    height: 4rem;
+    position: relative;
+    left: -90px;
+}
+
+.btn:hover{
+    font-weight: 400;
+}
+
+.icon{
+    color: black;
+    font-weight: 200;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    transition: transform 0.3s ease;
+}
+
+.icon:hover{
+    position: relative;
+    bottom: 5px;
+    color: black;
+    transform: translateY(-5px);
+}
+
