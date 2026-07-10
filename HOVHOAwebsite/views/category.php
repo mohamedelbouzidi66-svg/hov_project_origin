@@ -7,11 +7,6 @@
         $role = $_SESSION['users']['role'];
     }
 
-    $connect = false;
-    if(isset($_SESSION['users']) && $role == 'admin'){
-        $connect = true;
-    }
-
     //Filter Categories
     $where = "";
     if(isset($_GET['Filter'])){
@@ -21,11 +16,14 @@
         }
     }
     
+    // category table query under condition
     $categoriesFilter = $pdo->query("SELECT * FROM category $where
                                     ")->fetchAll(PDO::FETCH_ASSOC);
 
-    $categories = $pdo->query("SELECT DISTINCT label FROM category
-                                    ")->fetchAll(PDO::FETCH_ASSOC);    
+    // category table query
+    $categories = $pdo->query("SELECT DISTINCT label 
+                                FROM category
+                            ")->fetchAll(PDO::FETCH_ASSOC);    
 
 ?>
     <title><?= $_SESSION['users']['fullname'] ?> Dashboard</title>
@@ -92,16 +90,15 @@
 <body>
 
     <?php
-        if ($connect && $role == 'admin') {
+        if (isset($_SESSION['users']) && $role == 'admin') {
     ?>
     <div class="sidebar">
         <br>
         <a href="adminDashboard.php">Dashboard</a>
         <a href="products.php">Products</a>
         <a href="category.php" class="active">Categories</a>
-        <a href="#">Orders</a>
+        <a href="orders.php">Orders</a>
         <a href="users.php">Users</a>
-        <a href="#">Settings</a>
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
@@ -129,12 +126,25 @@
                 <div class="alert alert-<?= $_SESSION['type']; ?>">
                     <?= $_SESSION['message'] ?>
                 </div>
-            <?php
+        <?php
             unset($_SESSION['message']);
             unset($_SESSION['type']);
+        ?>
+        <?php 
+            endif 
+        ?>
+
+            <?php
+                // category table query
+                $categories = $pdo->query("SELECT * FROM category");
+                if($categories->rowCount() == 0){
             ?>
-            <?php endif ?>
-        
+                <h5 class="mt-5 pt-5 mb-4 text-center fw-light">No Categories For Now</h5>
+            <?php
+                }else{
+            ?>
+            
+        <!-- Categories table -->
         <table class="table">
             <thead>
                 <tr>
@@ -159,7 +169,7 @@
                     </td>
                     <td><?= $category['created_at'] ?></td>
                     <td>
-                        <a href="viewCategory.php?id_category=<?= $category['id_category'] ?>" 
+                        <a href="viewCategory.php?style=<?= $category['style'] ?>"
                             class="btn btn-sm btn-primary"><i class="bi bi-eye"></i>
                         </a>
                         <a href="modifyCategory.php?id_category=<?= $category['id_category'] ?>" 
@@ -198,8 +208,13 @@
             </form>
         </div>
 
-<br><br>
+        <?php 
+            }
+        ?>
 
+        <br><br>
+        
+        <!-- add new category form -->
         <form action="addCategory.php" method="post" 
             enctype="multipart/form-data" class="p-4 border rounded shadow-sm">
             <h3 class="mb-4">Add Category</h3>

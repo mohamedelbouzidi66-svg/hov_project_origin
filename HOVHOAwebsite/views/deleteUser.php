@@ -1,11 +1,11 @@
 <?php
-include '../includes/database.php';
-session_start();
+    include '../includes/database.php';
+    session_start();
 
     $idUser = $_GET['idUser'];
-    $sqlState = $pdo->prepare('DELETE FROM users 
-                                WHERE idUser = ?');
-    $sqlState->execute([$idUser]);
+    // delete user query
+    $sqlState = $pdo->prepare("DELETE FROM users 
+                                WHERE idUser = '$idUser'");
 
     $_SESSION['message'] = "User Deleted Successfully!";
     $_SESSION['type'] = "success";

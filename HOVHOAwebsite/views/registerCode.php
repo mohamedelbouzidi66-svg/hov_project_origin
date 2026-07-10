@@ -13,7 +13,8 @@
             !empty($password) && 
             !empty($role)){
 
-            $sqlstate = $pdo->prepare('INSERT INTO users VALUES(null,?,?,?,?)');
+            $sqlstate = $pdo->prepare('INSERT INTO users 
+                                        VALUES(null,?,?,?,?)');
             $sqlstate->execute([$fullname,
                                 $email,
                                 $password,

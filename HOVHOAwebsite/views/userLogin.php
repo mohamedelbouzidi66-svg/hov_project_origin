@@ -84,7 +84,7 @@
             <a href="index.php"><img src="../assets/hov_logo6.PNG"></a>
         </div>
 
-
+        <!-- Login Form -->
         <form method="post" action="loginCode.php">
             <div class="mb-3">
                 <input type="email" class="form-control" placeholder="Email" name="email">

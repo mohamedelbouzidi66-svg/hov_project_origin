@@ -1,7 +1,7 @@
 <?php
-include '../includes/header.php';
-include '../includes/database.php';
-session_start();
+    include '../includes/header.php';
+    include '../includes/database.php';
+    session_start();
 
     if(isset($_POST['modifyProduct'])){
 
@@ -27,14 +27,14 @@ session_start();
             move_uploaded_file($tmpName, '../uploadImage/product/' . $newFilenameproduct);
 
             $sqlstate = $pdo->prepare('UPDATE product
-                                            SET image = ?,
-                                            label = ?,
-                                            style = ?,
-                                            description = ?,
-                                            price = ?,
-                                            quantity = ?,
-                                            discount = ?
-                                            WHERE idProduct = ?');
+                                        SET image = ?,
+                                        label = ?,
+                                        style = ?,
+                                        description = ?,
+                                        price = ?,
+                                        quantity = ?,
+                                        discount = ?
+                                        WHERE idProduct = ?');
             $sqlstate->execute([$newFilenameproduct,
                                 $newLabel, 
                                 $newStyle, 

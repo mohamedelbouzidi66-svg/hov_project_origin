@@ -9,14 +9,21 @@
         $connect = true;
     }
 
+    // number of orders query
+    $orders = $pdo->query('SELECT COUNT(idOrder) AS total_orders
+                        FROM orders
+                        ')->fetch(PDO::FETCH_ASSOC);
+
+    // number of users query
     $users = $pdo->query('SELECT COUNT(idUser) AS total_users
                         FROM users 
-                        WHERE role = "user"'
-                        )->fetch(PDO::FETCH_ASSOC);
+                        WHERE role = "user"
+                        ')->fetch(PDO::FETCH_ASSOC);
 
+    // number of products query
     $products = $pdo->query('SELECT COUNT(idProduct) AS total_products
-                            FROM product'
-                            )->fetch(PDO::FETCH_ASSOC);
+                            FROM product
+                            ')->fetch(PDO::FETCH_ASSOC);
 ?>    
 
     <title><?= $_SESSION['users']['fullname'] ?> Dashboard</title>
@@ -85,9 +92,8 @@
         <a href="adminDashboard.php" class="active">Dashboard</a>
         <a href="products.php">Products</a>
         <a href="category.php">Categories</a>
-        <a href="#">Orders</a>
+        <a href="orders.php">Orders</a>
         <a href="users.php">Users</a>
-        <a href="#">Settings</a>
     </div>
     
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
@@ -126,7 +132,7 @@
                 <div class="card">
                     <div class="card-body">
                         <h5>Total Orders</h5>
-                        <h3>85</h3>
+                        <h3><?php echo $orders['total_orders'] ?></h3>
                     </div>
                 </div>
             </div>

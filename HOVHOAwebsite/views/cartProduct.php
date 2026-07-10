@@ -4,9 +4,9 @@
     include '../includes/nav.php';
 
     $idProduct = $_GET['idProduct'] ;
-    $sqlState = $pdo->prepare('SELECT * FROM product
-                                WHERE idProduct = ?');
-    $sqlState->execute([$idProduct]);
+    // product table query
+    $sqlState = $pdo->query("SELECT * FROM product
+                            WHERE idProduct = '$idProduct'");
     $products = $sqlState->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -16,11 +16,12 @@
             content: "\f415";
             font-family: "bootstrap-icons";
             font-weight: 300;
+            font-size: 32px;
         }
     </style>
 
 <body>
-        <br>
+        <br><br>
         <div class="container">
             <?php 
                 foreach($products as $product){ 
@@ -104,8 +105,8 @@
                             }else{
                         ?>
                                 <input type="submit" value="ADD TO BAG" name="addTocart" 
-                                class="btn btn-outline-dark px-4 rounded-pill m-3 fs-3 fw-bold">
-                                <a href="fav.php?idProduct=<?= $product['idProduct'] ?>">
+                                        class="btn btn-outline-dark px-4 rounded-pill m-3 fs-3 fw-bold">
+                                <a href="addTowishlist.php?idProduct=<?= $product['idProduct'] ?>">
                                     <i class="bi bi-heart fs-2 text-dark fav-icon m-2 px-2"></i>
                                 </a>
                         <?php
@@ -125,16 +126,16 @@
     <br>
     <?php
         $style = $product['style'];
-        $sqlState = $pdo->prepare('SELECT * FROM product 
-                                    WHERE style = ?');
-        $sqlState->execute([$style]);
-        $MayAlsoLike = $sqlState->fetchAll(PDO::FETCH_ASSOC);
+        // product table query
+        $products = $pdo->query("SELECT * FROM product 
+                                WHERE style = '$style'
+                                ")->fetchAll(PDO::FETCH_ASSOC);
     ?>
 
-    <h2 class="mt-5 pt-5 mb-4 text-center fw-bold">Vintage <?= $style ?></h2>
+    <h2 class="mt-5 pt-5 mb-4 text-center fw-bold">May Also Like</h2>
     <div class="container">
         <div class="row">
-            <?php foreach($MayAlsoLike as $product){ ?>
+            <?php foreach($products as $product){ ?>
             <div class="col-lg-3 col-md-4 my-2 ">
                 <form method="post" enctype="multipart/form-data">
                     <div class="card border-0">
@@ -152,15 +153,24 @@
                                 $discountedPrice = $price - $discount;
                                 if(!empty($discount)){
                             ?>
-                                    <span class="card-title fw-bold"><strike><?php echo $product['price'] ?> MAD</strike></span>
-                                    <span class="card-title fw-bold text-danger"><?php echo $discountedPrice ?> MAD</span>
+                                    <span class="card-title fw-bold">
+                                        <strike><?php echo $product['price'] ?> MAD</strike>
+                                    </span>
+                                    <span class="card-title fw-bold text-danger">
+                                        <?php echo $discountedPrice ?> MAD
+                                    </span>
                             <?php
                                 }else{
                             ?>
-                                    <span class="card-title fw-bold"><?php echo $product['price'] ?> MAD</span>
+                                    <span class="card-title fw-bold">
+                                        <?php echo $product['price'] ?> MAD
+                                    </span>
                             <?php
                                 }
                             ?>
+                            <a href="addTowishlist.php?idProduct=<?= $product['idProduct'] ?>">
+                                <i class="bi bi-heart fs-5 text-dark fav-icon float-end me-1"></i>
+                            </a>    
                             <div class="d-flex align-items-center gap-3 mt-3">
                 </form>
                         </div>
@@ -172,7 +182,7 @@
         ?>
 
     <br>
-<?php include '../includes/footer.php'; ?>
+    <?php include '../includes/footer.php'; ?>
 
 </body>
 </html>

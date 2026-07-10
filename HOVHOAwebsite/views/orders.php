@@ -75,8 +75,8 @@
         <a href="adminDashboard.php">Dashboard</a>
         <a href="products.php">Products</a>
         <a href="category.php">Categories</a>
-        <a href="orders.php">Orders</a>
-        <a href="users.php" class="active">Users</a>
+        <a href="orders.php" class="active">Orders</a>
+        <a href="users.php">Users</a>
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
@@ -97,7 +97,7 @@
     </nav>
 
     <div class="content">
-        <h3>Your Users content goes here.</h3>
+        <h3>Your Orders content goes here.</h3>
         <br>
         <?php 
             if(isset($_SESSION['message'])): ?>
@@ -113,42 +113,36 @@
         ?>
 
         <?php
-            // users table query
-            $users = $pdo->query("SELECT * FROM users");
-            if($users->rowCount() == 0){
+            // orders table query
+            $orders = $pdo->query("SELECT * FROM orders");
+            if($orders->rowCount() == 0){
         ?>
-            <h5 class="mt-5 pt-5 mb-4 text-center fw-light">No Users For Now</h5>
+            <h5 class="mt-5 pt-5 mb-4 text-center fw-light">No Orders For Now</h5>
         <?php
             }else{
         ?>
 
-        <!-- Users Table -->
+        <!-- Orders Table -->
         <table class="table">
             <thead>
                 <tr>
-                    <th scope="col">FullName</th>
-                    <th scope="col">Email</th>
-                    <th scope="col">Role</th>
-                    <th scope="col">Action</th>
+                    <th scope="col">OrderID</th>
+                    <th scope="col">UserID</th>
+                    <th scope="col">TotalPrice</th>
+                    <th scope="col">Created At</th>
                 </tr>
             </thead>
             <tbody id="tableBody">
                 <?php
-                    $users = $pdo->query('SELECT * FROM users
-                                        WHERE role = "user"
+                    $orders = $pdo->query('SELECT * FROM orders
                                         ')->fetchAll(PDO::FETCH_ASSOC);
-                    foreach ($users as $index => $user) {
+                    foreach ($orders as $index => $order) {
                 ?>
                 <tr class="<?= $index >= 5 ? 'hidden-row' : '' ?>">
-                    <td><?= $user['fullname'] ?></td>
-                    <td><?= $user['email'] ?></td>
-                    <td><?= $user['role'] ?></td>
-                    <td>
-                        <a href="deleteUser.php?idUser=<?php echo $user['idUser'] ?>" 
-                            onclick="return confirm('Do you really want to delete this User!')" 
-                            class="btn btn-sm btn-danger"><i class="bi bi-trash"></i>
-                        </a>
-                    </td>
+                    <td><?= $order['idOrder'] ?></td>
+                    <td><?= $order['idUser'] ?></td>
+                    <td><?= $order['totalPrice'] ?></td>
+                    <td><?= $order['created_at'] ?></td>
                 </tr>
                 <?php
                     }

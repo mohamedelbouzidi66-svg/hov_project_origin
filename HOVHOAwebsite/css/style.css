@@ -51,12 +51,12 @@
 }
 
 .btn:hover{
-    font-weight: 400;
+    font-weight: 200;
 }
 
 .icon{
     color: black;
-    font-weight: 200;
+    font-weight: bold;
     padding-left: 1rem;
     padding-right: 1rem;
     transition: transform 0.3s ease;
@@ -64,8 +64,8 @@
 
 .icon:hover{
     position: relative;
-    bottom: 5px;
+    bottom: 1px;
     color: black;
-    transform: translateY(-5px);
+    transform: translateY(-3px);
 }
 

@@ -1,3 +1,17 @@
+<?php
+    include '../includes/header.php';
+    include '../includes/database.php';
+
+    $connect = false;
+    if(isset($_SESSION['users'])){
+        $connect = true;
+    }
+
+    // navbar menu query
+    $labels = $pdo->query(" SELECT DISTINCT label
+                            FROM category
+                        ")->fetchAll(PDO::FETCH_ASSOC);
+?>
     <h2 class="mt-5 pt-4 mb-4 text-center fw-bold">Our Store</h2>
 
     <div class="container">
@@ -49,16 +63,43 @@
 
     <div class="col-md-4 mb-4">
         <h5 class="fw-bold mb-3">Quick Links</h5>
-        <a href="" class="d-inline-block mb-2 text-decoration-none text-dark">HouseOfVintage</a><br>
-        <a href="" class="d-inline-block mb-2 text-decoration-none text-dark">MEN</a><br>
-        <a href="" class="d-inline-block mb-2 text-decoration-none text-dark">WOMEN</a><br>
-        <a href="" class="d-inline-block mb-2 text-decoration-none text-dark">ACCESSORIES</a><br>
-        <a href="" class="d-inline-block mb-2 text-decoration-none text-dark">SPORTS</a><br>
+        <?php 
+            if($connect): 
+        ?>
+            <a href="user.php" class="d-inline-block mb-2 text-decoration-none text-dark">
+                HouseOfVintage
+            </a><br>
+        <?php 
+            else : 
+        ?>
+            <a href="index.php" class="d-inline-block mb-2 text-decoration-none text-dark">
+                HouseOfVintage
+            </a><br>
+        <?php 
+            endif
+        ?>
+
+        <ul class="list-unstyled">
+            <?php 
+                foreach($labels as $label): 
+            ?>
+                <li>
+                    <a href="style.php?label=<?= $label['label'] ?>" 
+                        class="d-inline-block mb-2 text-decoration-none text-dark">
+                        <?= $label['label'] ?>
+                    </a><br>
+                </li>
+            <?php
+                endforeach
+            ?>
+        </ul>
     </div>
 
     <div class="col-md-4 mb-4">
         <h5 class="fw-bold mb-3">Reach Us</h5>
-        <p>Email : <a href="" class="text-dark d-inline-block mb-0 fw-bold text-decoration-none">HouseOfVintage@gmail.com</a></p>
+        <p>Email : <a href="index.php" class="text-dark d-inline-block mb-0 fw-bold text-decoration-none">
+                    HouseOfVintage@gmail.com</a>
+        </p>
         <span>Phone :<p class="links d-inline-block fw-bold">+212 621820624</p></span>
         <p>Casablanca, Morocco</p>
     </div>

@@ -2,7 +2,8 @@
     include '../includes/header.php';
     include '../includes/database.php';
 
-    $categories = $pdo->query(" SELECT label, labelImage
+    // labels and labelImage query 
+    $labels = $pdo->query(" SELECT label, labelImage
                                 FROM category
                                 GROUP BY label
                                 ")->fetchAll(PDO::FETCH_ASSOC);
@@ -13,11 +14,20 @@
 
 <?php include '../includes/nav.php' ?>
 
+    <br>
+    <section class="section">
+        <div class="section-content">
+            <h1 class="display-5 fw-bold">House Of Vintage</h1>
+            <h1 class="display-5 fw-light">House Of Art.</h1>
+        </div>
+    </section>
+
+    <h2 class="mt-5 pt-5 mb-4 text-center fw-bold">Our Collections</h2>
     <div class="container">
         <div class="row">
             
             <?php 
-                foreach($categories as $label){ 
+                foreach($labels as $label){ 
             ?>
             <div class="col-lg-4 col-md-6 my-1">
                 <div class="card">
@@ -40,8 +50,8 @@
             <div class="col-lg-4 my-1">
                 <div class="card">
                     <a href="sale.php">
-                        <img src="" 
-                            class="card-img-top hover-move" alt="MEN">
+                        <img src="../assets/weeklysale.webp" 
+                            class="card-img-top hover-move" style="height: 31.7rem;" alt="MEN">
                     </a>
                     <div class="card-body justify-content-evenly mb-2">
                         <h5 class="card-title fw-bolder">Weekly Sale</h5>

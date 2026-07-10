@@ -1,6 +1,7 @@
 <?php 
     include '../includes/header.php';
     include '../includes/database.php';
+    session_start();
 ?>
 
     <title>Register Page</title>
@@ -66,7 +67,6 @@
 <body>
     <div class="register-box">
         <?php 
-            session_start();
             if(isset($_SESSION['message'])): ?>
                 <div class="alert alert-<?= $_SESSION['type']; ?>">
                     <?= $_SESSION['message'] ?>
@@ -83,7 +83,7 @@
             <a href="index.php"><img src="../assets/hov_logo6.PNG"></a>
         </div>
 
-
+        <!-- Register Form -->
         <form method="post" action="registerCode.php">
 
             <div class="mb-3">

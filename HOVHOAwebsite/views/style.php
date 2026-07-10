@@ -3,9 +3,9 @@
     include '../includes/database.php';
 
     $label = $_GET['label'];
-    $sqlstate = $pdo->prepare('SELECT * FROM category 
-                                WHERE label = ?');
-    $sqlstate->execute([$label]);
+    // category table query
+    $sqlstate = $pdo->query("SELECT * FROM category 
+                                WHERE label = '$label'");
     $categories = $sqlstate->fetchAll(PDO::FETCH_ASSOC);
 ?>
 

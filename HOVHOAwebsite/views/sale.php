@@ -2,8 +2,9 @@
     include '../includes/header.php' ;
     include '../includes/database.php';
 
+    // discounted products from table product query 
     $sqlState = $pdo->query('SELECT * FROM product 
-                                WHERE discount > 0 ');
+                            WHERE discount > 0 ');
     $products = $sqlState->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
@@ -13,7 +14,7 @@
             content: "\f415";
             font-family: "bootstrap-icons";
             font-weight: 300;
-            font-size: 26px;
+            font-size: 20px;
         }
     </style>
 
@@ -44,7 +45,7 @@
                                 $discountedPrice = $price - $discount;
                                 if(!empty($discount)){
                             ?>
-                                    <span class="card-title fw-bold">
+                                    <span class="card-title fw-light">
                                         <strike><?php echo $product['price'] ?> $</strike>
                                     </span>
                                     <span class="card-title fw-bold text-danger">
@@ -59,7 +60,7 @@
                             <?php
                                 }
                             ?>
-                            <a href="fav.php?idProduct=<?= $product['idProduct'] ?>">
+                            <a href="addTowishlist.php?idProduct=<?= $product['idProduct'] ?>">
                                 <i class="bi bi-heart fs-5 text-dark fav-icon float-end me-1"></i>
                             </a>
                             <div class="d-flex align-items-center gap-3 mt-3">

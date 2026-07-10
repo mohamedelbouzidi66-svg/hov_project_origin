@@ -1,11 +1,11 @@
 <?php
-include '../includes/database.php';
-session_start();
+    include '../includes/database.php';
+    session_start();
 
     $id_category = $_GET['id_category'];
-    $sqlState = $pdo->prepare('DELETE FROM category 
-                                WHERE id_category = ?');
-    $sqlState->execute([$id_category]);
+    // delete category query
+    $sqlState = $pdo->query("DELETE FROM category 
+                            WHERE id_category = '$id_category'");
 
     $_SESSION['message'] = "Category Deleted Successfully!";
     $_SESSION['type'] = "success";

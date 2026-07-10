@@ -9,96 +9,124 @@
         $connect = true;
     }
 
+    // navbar menu query
     $labels = $pdo->query(" SELECT DISTINCT label
-                                FROM category
+                            FROM category
     ")->fetchAll(PDO::FETCH_ASSOC);
 
     $idUser = isset($_SESSION['users']['idUser'])
-        ? $_SESSION['users']['idUser']
-        :null;
+    ? $_SESSION['users']['idUser']
+    :null;
+
+    // number of products in cart query 
     $sql = $pdo->query("SELECT COUNT(idBag) AS total_bag 
-                                FROM cart WHERE idUser = '$idUser'");
-    $result = $sql->fetch(PDO::FETCH_ASSOC);
+                        FROM cart 
+                        WHERE idUser = '$idUser'");
+    $bag_product_num = $sql->fetch(PDO::FETCH_ASSOC);
+
+    // number of products in cart query 
+    $sql = $pdo->query("SELECT COUNT(idWishlist) AS total_wishlist 
+                        FROM wishlist 
+                        WHERE idUser = '$idUser'");
+    $wishlist_product_num = $sql->fetch(PDO::FETCH_ASSOC);
 
 ?>
 
-    <nav class="navbar navbar-expand-lg navbar-light bg-light py-3">
+    <nav class="navbar navbar-expand-lg navbar-light py-3 border-bottom border-dark border-3">
         <div class="container-fluid">
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                     <?php foreach($labels as $label){ ?>
-                    <a href="style.php?label=<?= $label['label'] ?>" class="btn icon shadow-none text-decoration-none">
+                    <a href="style.php?label=<?= $label['label'] ?>" 
+                        class="btn icon shadow-none text-decoration-none">
                         <?= $label['label'] ?>
                     </a>
-                    <?php } ?>
-                    <a href="sale.php" class="btn icon shadow-none text-danger text-decoration-none">
+                    <?php 
+                        } 
+                    ?>
+                    <a href="sale.php" class="btn icon shadow-none text-danger">
                         SALE
                     </a>
                 </div>
                 </ul>
 
-                <div>
+                <div class="me-5">
                     <?php 
                         if($connect){
                     ?>
-                        <a href="user.php">
-                            <img src="../assets/hov_logo6.PNG" alt="" style="height: 4rem;" class="me-2">
+                        <a href="user.php" class="position-absolute start-50 translate-middle-x">
+                            <img src="../assets/hov_logo6.PNG" alt="" style="height: 5rem;">
                         </a>
                     <?php
                         }else{
                     ?>
-                        <a href="index.php">
-                            <img src="../assets/hov_logo6.PNG" alt="" style="height: 4rem;" class="me-2">
+                        <a href="index.php" class="position-absolute start-50 translate-middle-x">
+                            <img src="../assets/hov_logo6.PNG" alt="" style="height: 5rem;">
                         </a>
                     <?php
                         }
                     ?>
                 </div>
             
-                <form method="get" class="d-flex">
-                    <input class="form-control shadow-none" type="search" placeholder="Search" aria-label="Search" name="search-input">
-                    <button class="btn btn-outline-0" type="submit" name="search-btn"></button>
-                </form>
+                <div class="searchBox shadow-none icon fw-light">
+                    <i class="bx bx-x cancel"></i>
+                    <i class="fa-solid fa-magnifying-glass fs-5 me-2"></i>Search
+                </div>
 
-                <a href="cart.php" class="btn icon shadow-none text-decoration-none"><i class="bi bi-bag fs-5">
+                <a href="cart.php" class="btn icon shadow-none text-decoration-none fw-light">
+                    <i class="fa-solid fa-bag-shopping fs-4 me-1">
                     <?php 
-                        if($result['total_bag'] == 0){
-                            ?>
+                        if($bag_product_num['total_bag'] == 0){
+                    ?>
                             <sup></sup>
-                            <?php
+                    <?php
                         }else{
-                            ?>
-                            <sup class="fw-bold bg-danger rounded-pill px-2 text-light"><?= $result['total_bag'] ?></sup>
-                            <?php
+                    ?>
+                            <sup class="fw-bold bg-danger rounded-pill fs-6 px-2 text-light">
+                                <?= $bag_product_num['total_bag'] ?>
+                            </sup>
+                    <?php
                         }
                     ?>
                     </i>Bag
                 </a>
 
-                <a href="wishlist.php" class="btn icon shadow-none text-decoration-none">
-                    <i class="bi bi-heart fs-5 me-2"></i>Wishlist
+                <a href="wishlist.php" class="btn icon shadow-none text-decoration-none fw-light">
+                    <i class="fa-regular fa-heart fs-4 me-1">
+                    <?php 
+                        if($wishlist_product_num['total_wishlist'] == 0){
+                    ?>
+                            <sup></sup>
+                    <?php
+                        }else{
+                    ?>
+                            <sup class="fw-bold bg-danger rounded-pill fs-6 px-2 text-light"><?= $wishlist_product_num['total_wishlist'] ?></sup>
+                    <?php
+                        }
+                    ?>
+                    </i>Wishlist
                 </a>
                 
                 <?php
                     if($connect && $role == 'user'){
                         ?>
-                        <a href="userDashboard.php" class="btn fs-8 me-0 fw-bold shadow-none">
-                            <i class="bi bi-person fs-4 me-2"></i><?= $_SESSION['users']['fullname']?>
+                        <a href="userDashboard.php" class="btn icon shadow-none text-decoration-none fw-light">
+                            <i class="fa-solid fa-circle-user fs-4 me-2"></i><?= $_SESSION['users']['fullname']?>
                         </a>
                 <?php
                     }elseif($connect && $role == 'admin'){
                 ?>
-                        <a href="adminDashboard.php" class="btn fs-8 me-0 fw-bold shadow-none">
-                            <i class="bi bi-person fs-4 me-2"></i><?= $_SESSION['users']['fullname']?>
+                        <a href="adminDashboard.php" class="btn icon shadow-none text-decoration-none fw-light">
+                            <i class="fa-solid fa-circle-user fs-4 me-2"></i><?= $_SESSION['users']['fullname']?>
                         </a>
                 <?php    
                     }else{
                 ?>
-                        <a href="userLogin.php" class="btn shadow-none">
-                            <i class="bi bi-person fs-4 me-2"></i>Account
+                        <a href="userLogin.php" class="btn icon shadow-none text-decoration-none fw-light">
+                            <i class="fa-regular fa-circle-user fs-4 me-2"></i>Account
                         </a>
                 <?php
-                }
+                    }
                 ?>
             </div>
         </div>

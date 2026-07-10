@@ -1,79 +1,132 @@
 <?php 
-include '../includes/header.php';
-include '../includes/database.php';
-include '../includes/nav.php';
+    include '../includes/header.php';
+    include '../includes/database.php';
+    include '../includes/nav.php';
 
-    $idProduct = isset($_GET['idProduct'])
-        ? $_GET['idProduct']
-        :null;
-    $sqlState = $pdo->prepare('SELECT * FROM product 
-                                WHERE idProduct = ?');
-    $sqlState->execute([$idProduct]);
-    $products = $sqlState->fetchAll(PDO::FETCH_ASSOC);
+    $idUser = isset($_SESSION['users']['idUser'])
+            ? $_SESSION['users']['idUser']
+            :null;
+
+    // wishlist table query 
+    $wishlists = $pdo->query("SELECT * FROM wishlist 
+                            WHERE idUser = '$idUser'
+                            ")->fetchAll(PDO::FETCH_ASSOC);
 
 ?>
 
-    <title>Wishlist</title>
-<style>
-    .card-body{
-        height: 8.2rem;
-    }
-
-    .fav-icon:hover::before{
-        content: "\f415";
-        font-family: "bootstrap-icons";
-        font-weight: 300;
-        font-size: 26px;
-    }
-</style>
-
+    <title>HouseOfVintage - wishlist</title>
+    <style>
+        body {
+            overflow-x: hidden;
+        }
+        .hidden-row{
+            display: none;
+        }
+        .fav-icon:hover::before{
+            content: "\f415";
+            font-family: "bootstrap-icons";
+            font-weight: 300;
+            font-size: 20px;
+        }
+    </style>
 <body>
     <h2 class="mt-5 pt-5 mb-4 text-center fw-bold">Your Wishlist</h2>
-        <p class="mb-4 text-center fw-light">
-            <a href="userLogin.php" class="text-dark">Login</a> to save your Wishlist to your Account
-        </p>
-        <div class="container">
+
+        <!-- success/fail message -->
+        <?php 
+            if(isset($_SESSION['message'])): ?>
+                <div class="alert text-center w-75 mx-auto alert-<?= $_SESSION['type']; ?>">
+                    <?= $_SESSION['message'] ?>
+                </div>
         <?php
-            foreach($products as $product){ 
+            unset($_SESSION['message']);
+            unset($_SESSION['type']);
         ?>
-            <div class="row">
+        <?php 
+            endif 
+        ?>
+
+        <?php
+            // wishlist table query
+            $wishlists = $pdo->query("SELECT * FROM wishlist 
+                                    WHERE idUser = '$idUser'");
+            if($wishlists->rowCount() == 0){
+        ?>
+            <h5 class="mt-5 pt-5 mb-4 text-center fw-light">Your Wishlist Is Empty</h5>
+        <?php
+            }else{
+        ?>
+        <div class="container">
+        <div class="row">
+            <?php 
+                foreach($wishlists as $wishlist){
+            ?>
             <div class="col-lg-3 col-md-4 my-2">
-                <form method="post" action="addTobag.php">
+                <form action="addTocart.php" method="post">
                     <div class="card border-0">
-                        <a href="bagProduct.php?idProduct=<?= $product['idProduct'] ?>">
-                            <img src="../uploadImage/product/<?= $product['image'] ?>" 
+                        <img src="../uploadImage/product/<?= $wishlist['productImage'] ?>"
                             class="card-img-top hover-move">
-                        </a>
                         <div class="card-body justify-content-evenly mb-2">
                             <p class="mb-0">
-                                <?php echo $product['description'] ?>
+                                <?php echo $wishlist['description'] ?>
                             </p>
                             <?php 
-                                $discount = $product['discount'];
-                                $price = $product['price'];
+                                $discount = $wishlist['discount'];
+                                $price = $wishlist['price'];
                                 $discountedPrice = $price - $discount;
                                 if(!empty($discount)){
                             ?>
-                                    <span class="card-title fw-bold">
-                                        <strike><?php echo $product['price'] ?> MAD</strike>
+                                    <span class="card-title fw-light">
+                                        <strike><?php echo $wishlist['price'] ?> $</strike>
                                     </span>
                                     <span class="card-title fw-bold text-danger">
-                                        <?php echo $discountedPrice ?> MAD
+                                        <?php echo $discountedPrice ?> $
                                     </span>
                             <?php
                                 }else{
                             ?>
-                                    <span class="card-title fw-bold"><?php echo $product['price'] ?> MAD</span>
+                                    <span class="card-title fw-light">
+                                        <?php echo $wishlist['price'] ?> $
+                                    </span>
                             <?php
                                 }
                             ?>
-                        <input type="hidden" name="idProduct" value="<?= $product['idProduct'] ?>">
-                        <input type="hidden" name="productImage" value="<?= $product['image'] ?>">
-                        <input type="hidden" name="description" value="<?= $product['description'] ?>">
-                        <input type="hidden" name="price" value="<?= $product['price'] ?>">
-                        <input type="hidden" name="discount" value="<?= $product['discount'] ?>">
-                        <input type="submit" value="ADD TO BAG" name="addTobag" class="btn btn-outline-dark px-3 rounded-pill m-2 fs-4 fw-bold">
-                    <div class="d-flex align-items-center gap-3 mt-3">
+                            <br>
+                            <?php 
+                                $idProduct = $wishlist['idProduct'];
+                                $sqlState = $pdo->query("SELECT * FROM product
+                                                        WHERE idProduct = '$idProduct'");
+                                $products = $sqlState->fetchAll(PDO::FETCH_ASSOC);
+                                foreach($products as $product){}
+                                $quantity = $product['quantity'];
+                                if($quantity == 1 ){
+                            ?>
+                                <input type="hidden" name="quantity" value="1">
+                                <span class="card-title fw-bold">unique item | only 1 available</span><br>
+                            <?php
+                                }else{
+                            ?>
+                                <label class="fw-bold">Select Quantity</label><br>
+                                <input type="number" class="form-control shadow-none w-25" 
+                                        name="quantity" max="<?= $quantity ?>" min="1" value="1">
+                            <?php
+                                }
+                            ?>
+                            <input type="hidden" name="idProduct" value="<?= $wishlist['idProduct'] ?>">
+                            <input type="hidden" name="productImage" value="<?= $wishlist['productImage'] ?>">
+                            <input type="hidden" name="description" value="<?= $wishlist['description'] ?>">
+                            <input type="hidden" name="price" value="<?= $wishlist['price'] ?>">
+                            <input type="hidden" name="discount" value="<?= $wishlist['discount'] ?>">
+                            <input type="submit" value="ADD TO BAG" name="addTocart" 
+                                class="btn btn-outline-dark px-4 rounded-pill m-3 fs-6 fw-bold">
+
+                            <a href="deletewishlistProduct.php?idWishlist=<?php echo $wishlist['idWishlist'] ?>" 
+                                onclick="return confirm('Do you really want to delete this Product')" 
+                                class="text-dark px-4 rounded-pill m-4 fs-6 fw-bold">
+                                remove
+                            </a>
+                            <div class="d-flex align-items-center gap-3 mt-3">
+
                 </form>
                         </div>
                     </div>
@@ -81,10 +134,13 @@ include '../includes/nav.php';
             </div>
         <?php 
             } 
+            }
         ?>
+
     <br>
 
 <?php include '../includes/footer.php'; ?>
 
 </body>
+
 </html>

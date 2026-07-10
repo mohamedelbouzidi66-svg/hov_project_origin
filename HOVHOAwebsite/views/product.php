@@ -15,7 +15,7 @@
             content: "\f415";
             font-family: "bootstrap-icons";
             font-weight: 300;
-            font-size: 26px;
+            font-size: 20px;
         }
     </style>
 
@@ -34,7 +34,7 @@
                     <div class="card border-0">
                         <a href="cartProduct.php?idProduct=<?= $product['idProduct'] ?>">
                             <img src="../uploadImage/product/<?= $product['image'] ?>" 
-                                    class="card-img-top hover-move">
+                                class="card-img-top hover-move">
                         </a>
                         <div class="card-body justify-content-evenly mb-2">
                             <p class="mb-0">
@@ -61,7 +61,7 @@
                             <?php
                                 }
                             ?>
-                            <a href="wishlist.php?idProduct=<?= $product['idProduct'] ?>">
+                            <a href="addTowishlist.php?idProduct=<?= $product['idProduct'] ?>">
                                 <i class="bi bi-heart fs-5 text-dark fav-icon float-end me-1"></i>
                             </a>
                             <div class="d-flex align-items-center gap-3 mt-3">

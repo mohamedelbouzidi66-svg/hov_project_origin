@@ -1,11 +1,6 @@
 <?php 
     include '../includes/header.php';
     include '../includes/nav.php';
-
-    $connect = false;
-    if(isset($_SESSION['users'])){
-        $connect = true;
-    }
 ?>
 
     <title>User Dashboard Page</title>
@@ -65,7 +60,7 @@
     </style>
 <body>
     <?php
-        if($connect){
+        if(isset($_SESSION['users'])){
     ?>
     <br>
     <div class="container my-4 px-4">
@@ -112,7 +107,8 @@
                 <div class="dashboard-card overflow-hidden">
                     <div class="loyalty-banner"></div>
                     <div class="dashboard-card-body d-flex justify-content-between align-items-center py-3">
-                        <h6 class="fw-bold text-uppercase m-0" style="font-size: 14px; letter-spacing: 1px;">Loyalty Program</h6>
+                        <h6 class="fw-bold text-uppercase m-0" 
+                            style="font-size: 14px; letter-spacing: 1px;">Loyalty Program</h6>
                         <a href="#" class="text-link">Display</a>
                     </div>
                 </div>
@@ -121,8 +117,11 @@
                     <div class="dashboard-card-header py-3">
                         Wishlist
                     </div>
+                    <?php 
+                        
+                    ?>
                     <div class="dashboard-card-body">
-                            <div class="text-muted">This list is empty.</div>
+                        <div class="text-muted">This list is empty.</div>
                     </div>
                 </div>
 
@@ -138,9 +137,6 @@
     <?php
         }else{
             header('location:userLogin.php');
-    ?>
-<br>
-    <?php
         }
     ?>
 </body>

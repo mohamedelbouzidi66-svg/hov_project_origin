@@ -28,12 +28,12 @@
             move_uploaded_file($tmpNamestyle, '../uploadImage/style/' . $newFilenamestyle);
 
             $sqlstate = $pdo->prepare('UPDATE category
-                                            SET label = ?,
-                                            labelImage = ?,
-                                            style = ?,
-                                            styleImage = ?,
-                                            created_at = ?
-                                            WHERE id_category = ?');
+                                        SET label = ?,
+                                        labelImage = ?,
+                                        style = ?,
+                                        styleImage = ?,
+                                        created_at = ?
+                                        WHERE id_category = ?');
             $sqlstate->execute([$newLabel,
                                 $newFilenamelabel,
                                 $newStyle,

@@ -1,6 +1,6 @@
 <?php
-include "../includes/database.php";
-session_start();
+    include "../includes/database.php";
+    session_start();
 
     if (isset($_POST['addCategory'])) {
         $label = htmlspecialchars($_POST['label']);
@@ -23,18 +23,22 @@ session_start();
             $filenamestyle = uniqid() . $_FILES['styleImage']['name'];
             move_uploaded_file($tmpNamestyle, '../uploadImage/style/' . $filenamestyle);
 
-            $sqlstate = $pdo->prepare('INSERT INTO category VALUES(null,?,?,?,?,?)');
+            $sqlstate = $pdo->prepare('INSERT INTO category 
+                                        VALUES(null,?,?,?,?,?)');
+
             $sqlstate->execute([$label,
                                 $filenamelabel,
                                 $style, 
                                 $filenamestyle,
                                 $created_at]);
-                                
+
             $_SESSION['message'] = "Category Added Successfully";
             $_SESSION['type'] = "success";
+
         } else {
             $_SESSION['message'] = "Category Can Not Be Added!";
             $_SESSION['type'] = "danger!";
+
         }
         header('location:category.php');
         exit();

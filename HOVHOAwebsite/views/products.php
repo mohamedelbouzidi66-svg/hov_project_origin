@@ -1,17 +1,13 @@
 <?php
-include '../includes/database.php';
-include '../includes/header.php';
-session_start();
+    include '../includes/database.php';
+    include '../includes/header.php';
+    session_start();
 
     if(isset($_SESSION['users'])){
         $role = $_SESSION['users']['role'];
     }
 
-    $connect = false;
-    if(isset($_SESSION['users']) && $role == 'admin'){
-        $connect = true;
-    }
-
+    // Filter Products
     $where = "";
     if(isset($_GET['Filter'])){
         $category = $_GET['filter'];
@@ -20,11 +16,13 @@ session_start();
         }
     }
 
+    // product table query under condition
     $productsFilter = $pdo->query("SELECT * FROM product $where
                                 ")->fetchAll(PDO::FETCH_ASSOC);
-                                
+    
+    // category table query
     $categories = $pdo->query("SELECT * FROM category
-                                ")->fetchAll(PDO::FETCH_ASSOC);
+                            ")->fetchAll(PDO::FETCH_ASSOC);
 ?>
 
     <title><?= $_SESSION['users']['fullname'] ?> Dashboard</title>
@@ -91,16 +89,15 @@ session_start();
 <body>
 
     <?php
-        if ($connect && $role == 'admin') {
+        if (isset($_SESSION['users']) && $role == 'admin') {
     ?>
     <div class="sidebar">
         <br>
         <a href="adminDashboard.php">Dashboard</a>
         <a href="products.php" class="active">Products</a>
         <a href="category.php">Categories</a>
-        <a href="#">Orders</a>
+        <a href="orders.php">Orders</a>
         <a href="users.php">Users</a>
-        <a href="#">Settings</a>
     </div>
 
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark px-4">
@@ -135,6 +132,18 @@ session_start();
         <?php 
             endif 
         ?>
+        
+        <?php
+            // product table query
+            $products = $pdo->query("SELECT * FROM product");
+            if($products->rowCount() == 0){
+        ?>
+            <h5 class="mt-5 pt-5 mb-4 text-center fw-light">No Products For Now</h5>
+        <?php
+            }else{
+        ?>
+
+        <!-- products table -->
         <table class="table">
             <thead>
                 <tr>
@@ -199,11 +208,15 @@ session_start();
             </form>
 
         </div>
+        <?php 
+            }
+        ?>
 
 <br><br>
 
         <div class="container">
             <section>
+                <!-- add products form -->
                 <form action="addProduct.php" method="post" enctype="multipart/form-data" class="p-4 border rounded shadow-sm">
                     <h3 class="mb-4">Add Product</h3>
                     <div class="mb-3">
@@ -217,10 +230,11 @@ session_start();
                             <option value="">Select Label</option>
                                 <?php 
                                     $categories = $pdo->query('SELECT DISTINCT label 
-                                                            FROM category')->fetchAll(PDO::FETCH_ASSOC);
-                                    foreach($categories as $category){ 
+                                                                FROM category
+                                                                ')->fetchAll(PDO::FETCH_ASSOC);
+                                    foreach($categories as $label){ 
                                 ?>
-                        <option value="<?php echo $category['label'] ?>"><?php echo $category['label'] ?></option>
+                            <option value="<?php echo $label['label'] ?>"><?php echo $label['label'] ?></option>
                                 <?php 
                                     } 
                                 ?>
@@ -231,14 +245,16 @@ session_start();
                         <label class="form-label">Style</label>
                         <select name="style" class="form-select">
                             <option value="">Select Style</option>
-                            <?php 
-                                $categories = $pdo->query('SELECT DISTINCT style 
-                                                        FROM category')->fetchAll(PDO::FETCH_ASSOC);
-                                foreach($categories as $category){ ?>
-                            <option value="<?php echo $category['style'] ?>"><?php echo $category['style'] ?></option>
-                            <?php 
-                                } 
-                            ?>
+                                <?php 
+                                    $categories = $pdo->query('SELECT DISTINCT style 
+                                                                FROM category
+                                                                ')->fetchAll(PDO::FETCH_ASSOC);
+                                    foreach($categories as $style){ 
+                                ?>
+                            <option value="<?php echo $style['style'] ?>"><?php echo $style['style'] ?></option>
+                                <?php 
+                                    } 
+                                ?>
                         </select>
                     </div>
 

@@ -27,17 +27,20 @@
             !empty($price) && 
             !empty($quantity)){
 
+            // number of cart table rows query
             $bags = $pdo->query("SELECT * FROM cart 
                                 WHERE idProduct = '$idProduct' 
                                 AND idUser = '$idUser'");
 
-            if($bags->rowCount()>0){
+            if($bags->rowCount() > 0){
 
                 $_SESSION['message'] = "Product already has been added to the bag!";
                 $_SESSION['type'] = "danger";
 
             }else{
-                $sqlstate = $pdo->prepare("INSERT INTO cart VALUES(null,?,?,?,?,?,?,?)");
+                $sqlstate = $pdo->prepare("INSERT INTO cart 
+                                            VALUES(null,?,?,?,?,?,?,?)");
+
                 $sqlstate->execute([$idUser,
                                     $idProduct, 
                                     $productImage, 
@@ -48,8 +51,8 @@
                                     
                 $_SESSION['message'] = "Product Added To Bag!";
                 $_SESSION['type'] = "success";
-                }
-                }
+            }
+        }
                 header('location:cart.php');
                 exit();
                 }
